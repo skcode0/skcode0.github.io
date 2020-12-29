@@ -1,0 +1,234 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Concert One', cursive;
+    overflow: hidden;
+}
+
+body{
+    background: linear-gradient(45deg, #05e0f0, #00f74a);
+}
+
+.header{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header h1, p{
+    margin: 10px;
+}
+
+.header h1{
+    font-size: 2.4rem;
+    letter-spacing: 5px;;
+}
+
+.header p{
+    font-size: 1.4rem;
+}
+
+.container{
+    margin: auto;
+    margin-top: 2%;
+    display: grid;
+    width: 30%;
+    height: 69%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, minmax(100px, 2fr));
+    gap: 1px;
+    background: linear-gradient(45deg,  #00f74a, #05e0f0); 
+    box-shadow: 5px 5px 5px 2px rgb(24, 23, 23);
+    position: relative;
+}
+
+/* display */
+#display{
+    position: relative;
+    font-size: 2rem;
+    display: flex;
+}
+
+.op-container{
+    position: absolute;
+    right: 5px;
+    width: 85%;
+    align-self: center;
+}
+
+#result, #currentOp{
+    text-align: right;
+    width: 100%;
+    height: 3rem;
+    overflow: auto;
+}
+
+#result{
+    margin-bottom: 5px;
+    font-size: 1.2rem;  
+}
+
+#sign-change{
+    position: absolute;
+    left: -55px;
+    top: 55px;
+    cursor: pointer;
+}
+
+#sign-change:hover{
+    font-size: 2.1rem;
+}
+
+/* popup history */
+
+#history{
+    position: absolute;
+}
+
+#history img{
+    cursor: pointer;
+    width: 13%;
+}
+
+#popup-history{
+    background: linear-gradient(45deg,  #0fec52, #11deec); 
+    /* opacity: 0.8; */
+    width: 20%;
+    height: 69%;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    /* border: solid black 1px; */
+    box-shadow: 4px 3px 2px 2px rgb(24, 23, 23);
+}
+
+#delete-icon{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 7%;
+    cursor: pointer;
+}
+
+#delete-icon:hover{
+    background-color: rgba(219, 45, 45, 0.863);
+    border-radius: 50%;
+}
+
+#popup-history h1{
+    text-align: center;
+    border-bottom: 5px rgb(12, 12, 12) solid;
+    /* background: linear-gradient(45deg,  #0fec52, #11deec);  */
+    padding: 25px;
+    letter-spacing: 18px;
+    font-size: 3rem;
+}
+
+#history-list{
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 83%;
+    overflow: auto;
+}
+
+#history-list hr{
+    border: 1px rgba(32, 31, 31, 0.726) solid;
+    width: 90%;
+    margin: auto;
+}
+
+    /* toggle history class */
+.history-disappear{
+    transform: translateX(100%);
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+}
+
+.history-appear{
+    transform: translateX(0%);
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+}
+
+#backspace img{
+    width: 35%;
+}
+
+/* btns */
+.special-btns, .btns, .operators{
+    font-family: 'Concert One', cursive;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.special-btns:hover, .operators:hover, .btns:hover{
+    /* font-size: 2.1rem; */
+    background: rgb(243, 236, 236);
+}
+
+.three-space{
+    grid-column: span 3;
+    background-color: white;
+}
+
+.two-space{
+    grid-column: span 2;
+    background-color: white;
+
+}
+
+/* error/warning messages */
+#warnings{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    right: 8%;
+    top: 20%;
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6rem;
+    color: rgb(192, 11, 11);
+    
+}
+
+
+/* shortcuts tooltips */
+
+.shortcut-title{
+    font-size: 2.2rem;
+    margin: auto;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.shortcuts{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.7rem;
+    border: 2px black solid;
+}
+
+.shortcuts img{
+    width: 2rem;
+}
+
+.shortcuts div{
+    text-align: center;
+}
+

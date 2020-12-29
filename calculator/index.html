@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"></head>
+<body>
+    <!-- finished: 12/1/20 -->
+    <div class="header">
+        <h1>Calculator</h1>
+        <p>Notice: This calculator only evaluates a <i>single pair</i> of numbers at a time.</p>
+    </div>
+
+    <!-- history -->
+    <div id="popup-history" class="history-disappear">
+        <img title="Delete History" id="delete-icon"src="remove.svg" alt="delete icon">
+        <h1>History</h1>
+        <ul id="history-list">
+        </ul>
+    </div>
+
+    <div class="container">
+        <div id="display" class="three-space">
+            <div title="History" id="history"><img src="history.svg" alt="History Icon"></div>
+            <div class="op-container">
+                <div id="result"></div>
+                <h4 id="sign-change">+/-</h4>
+                <div id="currentOp"></div>
+            </div>
+            <!-- limit to 23 chars-->
+        </div>
+        <button class="special-btns" id="backspace"><img src="backspace1.svg" alt="Backspace"></button>
+        <button class="special-btns" id="AC">AC</button>
+        <button class="special-btns" id="C">C</button>
+        <button class="special-btns" id="power">x<sup>y</sup></button>
+        <button class="operators" id="/">÷</button>
+        <button class="btns" id="1">1</button>
+        <button class="btns" id="2">2</button>
+        <button class="btns" id="3">3</button>
+        <button class="operators" id="x">x</button>
+        <button class="btns" id="4">4</button>
+        <button class="btns" id="5">5</button>
+        <button class="btns" id="6">6</button>
+        <button class="operators" id="-">-</button>
+        <button class="btns" id="7">7</button>
+        <button class="btns" id="8">8</button>
+        <button class="btns" id="9">9</button>
+        <button class="operators" id="+">+</button>
+        <button class="special-btns" id="point">.</button>
+        <button class="btns" id="0">0</button>
+        <button class="special-btns two-space" id="equals" id="=">=</button>
+    </div>
+    
+    <!-- Warning messages -->
+    <div id="warnings"></div>
+
+    <h2 class="shortcut-title">Shortcuts:</h2>
+    <div class="shortcuts"> 
+        <div>
+            <p>Enter:</p>
+            <p>=</p>
+        </div>
+        <div>
+            <p>Backspace:</p>
+            <img src="backspace1.svg" alt="Backspace Icon"></p>
+        </div>
+        <div>
+            <p>c:</p>
+            <p>C (Clear)</p> 
+        </div>  
+        <div>
+            <p>Esc:</p>
+            <p>AC (All Clear)</p> 
+        </div>
+        <div>
+            <p>x (or *):</p>
+            <p>Multiplication</p> 
+        </div>
+        <div>
+            <p>`:</p>
+            <p>+/-</p> 
+        </div>
+        <div>
+            <p>^:</p>
+            <p>x<sup>y</sup></p> 
+        </div>    
+        <div>
+            <p>h:</p>
+            <img src="history.svg" alt="History Icon">
+        </div>
+        <div>
+            <p>Del:</p>
+            <img src="remove.svg" alt="delete icon">
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
