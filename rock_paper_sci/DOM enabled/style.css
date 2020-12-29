@@ -1,0 +1,114 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    font-size: 1.9rem;
+    background: rgba(216, 143, 143, 0.384);
+}
+
+/* nav */
+.nav{
+    background: rgb(155, 168, 182);
+    padding: 2px;
+    border-bottom: solid 4px rgb(88, 88, 88);
+}
+
+.nav h4{
+    text-align: center;
+    padding: 2px;
+}
+
+/* round */
+.round{
+    position: absolute;
+    left: 45%;
+}
+
+/* scoreboard */
+.scoreboard{
+    display: flex;
+    justify-content: space-between;
+}
+
+.myScore{
+    /* background: rgb(66, 150, 179); */
+    background: lightblue;
+    text-align: center;
+    width: 15%;
+    height: 94.9vh;
+}
+
+
+.compScore{
+    background: salmon;
+    text-align: center;
+    width: 15%;
+}
+
+.myScore h2, .compScore h2{
+    padding-top: 30px;
+}
+
+#update-scores{
+    position: absolute;
+    top: 47%;
+    width: 96%;
+    left: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#update-myScore, #update-compScore, #round{
+    width: 100px;
+    overflow: auto;
+    text-align: center;
+    font-size: 5rem;
+    height: 100px;
+    width: 200px;
+}
+
+/* images */
+.images{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+    position: absolute;
+    top: 32vh;
+    left: 15%;
+}
+
+.images img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+/* logger */
+#logger{
+    background: silver;
+    opacity: 80%;
+    width: 70%;
+    height: 370px;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    overflow: auto;
+}
+
+#loggerList{
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10px; 
+    list-style-type: none;
+
+}
+
+#loogerList li{
+    overflow: auto;
+}
