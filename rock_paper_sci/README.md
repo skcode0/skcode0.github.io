@@ -1,3 +1,3 @@
 From Odin Project
 
-[DOM Enabled RPS](skcode0.github.io/rock_paper_sci/DOM enabled/)
+[DOM Enabled RPS](https://skcode0.github.io/rock_paper_sci/DOM%20enabled/)
