@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <h1>Library</h1>
+        <p>Note: This website uses local storage, which can only store up to 5mb of data.</p>
+    </nav>
+
+    <!-- burger menu -->
+    <img id="burger-menu" title="General Information" src="img/menu.svg" alt="Menu Icon">
+
+    <!-- button at the button right of page -->
+    <button id="mobile-add-button"><img src="/Library/img/add.svg" alt="add icon"></button>
+
+    <!-- options -->
+    <div class="options-container">
+        <div class="options">
+            <p>Order By: </p>
+            <select name="sorting-options" id="sorting-options">
+                <option value="">Select One …</option>
+                <option value="Insertion Date">Insertion Date</option>
+                <option value="Book Title">Book Title</option>
+                <option value="Author">Author</option>
+                <option value="Publishing Date">Publishing Date</option>
+                <option value="Total Pages">Total Pages</option>
+                <option value="Pages Read">Pages Read</option>
+            </select>
+            <select name="sorting-direction" id="sorting-direction">
+                <option value="">Select One …</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Descending">Descending</option>
+            </select>
+
+            <div class="read-btns">
+                <button id="unread-btn">Unread</button>
+                <button id="read-btn">Read</button>
+            </div>
+        </div>
+
+            <!-- night mode -->
+        <div class="dark-mode-container">
+            <p>Dark Mode: </p>
+            <div>
+                <input type="checkbox" class="dark-mode-checkbox" id="dark-mode-checkbox">
+                <label for="dark-mode-checkbox" class="dark-mode-label">
+                    <img class="moon" src="img/moon.svg" alt="Moon Icon">
+                    <img class="sun" src="img/sun.svg" alt="Sun Icon">
+                    <div class="ball"></div>
+                </label> 
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW book modal -->
+    <div id="book-modal" class="white-background">
+        <div id="modal-close-btn">×</div>
+        <p class="book-modal-title">Add A New Book:</p>
+        
+        <div class="input-container" id="book-title-container">
+            <label for="book-title">Book Title*:</label>
+            <br>
+            <input id="book-title" type="text">
+            <p class="warnings" id="book-title-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="book-author">Book Author*:</label>
+            <br>
+            <input id="book-author"  type="text">
+            <p class="warnings" id="book-author-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="published-date">Publication Date*: </label>
+            <br>
+            <input id="published-date"  type="date" name="published-date">
+            <p class="warnings" id="published-date-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="total-pages">Total Pages*:</label>
+            <br>
+            <input id="total-pages" type="number" min=1 max=9999999999>
+            <p class="warnings" id="total-pages-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="pages-read">Pages Read*:</label>
+            <br>
+            <input id="pages-read" type="number" min=0>
+            <p class="warnings" id="pages-read-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="reading-status">Reading Status: </label>
+            <select name="read-unread" id="read-unread">
+                <option value="unread">Unread</option>
+                <option value="read">Read</option>
+            </select>
+        </div>
+        <br>
+        <div id="cancel-add-btns">
+            <button id="cancel-btn">Cancel</button>
+            <button id="add-btn">Add</button>
+        </div> 
+    </div>
+
+    <!-- EDIT book modal -->
+    <div id="edit-book-modal" class="white-background">
+        <div id="edit-modal-close-btn">×</div>
+        <p class="book-modal-title">Edit Book:</p>
+        
+        <div class="input-container">
+            <label for="edit-book-title">Book Title*:</label>
+            <br>
+            <input id="edit-book-title" type="text">
+            <p class="warnings" id="edit-book-title-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="edit-book-author">Book Author*:</label>
+            <br>
+            <input id="edit-book-author"  type="text">
+            <p class="warnings" id="edit-book-author-warning"></p>
+
+        </div>
+        <div class="input-container">
+            <label for="edit-published-date">Publication Date*: </label>
+            <br>
+            <input id="edit-published-date"  type="date" name="published-date">
+            <p class="warnings" id="edit-published-date-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="edit-total-pages">Total Pages*:</label>
+            <br>
+            <input id="edit-total-pages" type="number" min=1 max=9999999999>
+            <p class="warnings" id="edit-total-pages-warning"></p>
+        </div>
+
+        <div class="input-container">
+            <label for="edit-pages-read">Pages Read*:</label>
+            <br>
+            <input id="edit-pages-read" type="number" min=0>
+            <p class="warnings" id="edit-pages-read-warning"></p>
+        </div>
+        <div class="input-container">
+            <label for="edit-reading-status">Reading Status: </label>
+            <select name="read-unread" id="edit-read-unread">
+                <option value="unread">Unread</option>
+                <option value="read">Read</option>
+            </select>
+        </div>
+        <br>
+        <div id="cancel-edit-btns">
+            <button id="edit-cancel-btn">Cancel</button>
+            <button id="edit-btn">Edit</button>
+        </div> 
+    </div>
+        <!-- modal overlay -->
+    <div id="modal-overlay"></div>
+
+    <!-- book grid -->
+        <div id="book-grid">
+            <!-- individual book info from JS-->
+            <div id="grid-add-btn">
+                <img src="img/add.svg" alt="">
+            </div>
+    </div>
+    
+    <!-- general info -->
+    <div id="general-info-container">
+        <div id="general-close-btn">×</div>
+        <p class="general-title">General Information</p>
+        <div class="general-info">
+            <div id="info-keys">
+                <p>Books:</p>
+                <p>Completed Books:</p>
+                <p>Pages Read:</p>
+                <p>Total Pages:</p>
+                <p>Completion Rate:</p>
+            </div>
+            <div id="info-values">
+                <!-- 10 digit limit; over the number, but 1e10 + -->
+                <p id="books-value">0</p>                
+                <p id="completed-books-value">0</p>                
+                <p id="pages-read-value">0</p>                
+                <p id="total-pages-value">0</p>
+                <div class="completion-rate-container">
+                    <p><span id="completion-rate-value-books">0</span>% (books)</p>   
+                    <p><span id="completion-rate-value-pages">0</span>% (pages)</p>                   
+                </div>                
+            </div>
+        </div>
+        <button id="delete-btn">Delete<br>Storage</button>
+    </div>
+
+    <script src="book_object.js"></script>
+</body>
+</html>

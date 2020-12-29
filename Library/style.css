@@ -1,0 +1,542 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+button{
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* nav */
+nav{
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    background: rgb(90, 90, 90);
+    opacity: 0.85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 555555;
+}
+
+nav h1{
+    font-size: 3rem;
+    color:white;
+}
+
+nav p{
+    color: rgb(209, 209, 209);
+}
+
+/* Burger Menu */
+#burger-menu{
+    width: 2.5%;
+    position: fixed;
+    right: 3%;
+    top: 2.5%;
+    cursor: pointer;
+    z-index: 555555;
+}
+
+#burger-menu:hover{
+    transform: scale(1.2);
+}
+
+.toggle-burger-menu{
+    display: block;
+}
+
+/* mobile add button */
+#mobile-add-button{
+    position: fixed;
+    bottom: 23px;
+    right: 23px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(60deg, rgb(90, 218, 96), rgb(17, 187, 221));
+    outline: none;
+    border: none;
+    z-index: 99999;
+    transition: all 0.2s ease-out;
+    /* box-shadow: 1px 1px 10px grey; */
+}
+
+#mobile-add-button img{
+    width: 50%;
+    height: 50%; 
+    opacity: 0.85;
+}
+
+#mobile-add-button:hover{
+    transform: rotate(90deg) scale(1.3);
+}
+
+/* Options */
+.options-container{
+    display: flex;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5px;
+    padding: 10px 0; 
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.options{
+    margin-left: 10px;
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-btns{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.read-btns button{
+    padding: 2px;
+    width: 40%;
+    height: 100%;
+    border: 1px rgb(110, 110, 110) solid;
+    border-radius: 100px;
+    color: black;
+}
+
+#read-btn{
+    background: linear-gradient(60deg, rgb(90, 218, 96), rgb(17, 187, 221));
+}
+
+#read-btn:hover{
+    background: linear-gradient(-60deg, rgb(90, 218, 96), rgb(17, 187, 221));
+}
+
+#unread-btn{
+    background: linear-gradient(90deg,  rgb(247, 73, 73), rgb(236, 22, 22));
+}
+
+#unread-btn:hover{
+    background: linear-gradient(-60deg, rgb(247, 73, 73), rgb(236, 22, 22));
+}
+
+/* dark mode & book info read btn */
+.dark-mode-container, .read-toggle-container{
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 1px red solid; */
+}
+
+.read-toggle-container{
+    justify-content: left;
+}
+
+.read-toggle-container p{
+    margin-right: 5%;
+}
+
+.dark-mode-checkbox, .read-toggle-checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label .ball,
+.read-toggle-checkbox:checked + .read-toggle-label .ball{
+    transform: translateX(100%);
+}
+
+.dark-mode-label, .read-toggle-label{
+    background:rgb(255, 208, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    height: 25px;
+    width: 46px;
+    padding: 5px;
+    position: relative;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label{
+    background-color: rgb(134, 134, 134);
+}
+
+.read-toggle-label{
+    background: linear-gradient(-45deg, rgb(255, 255, 255), rgb(122, 122, 122));
+    border: 1px white solid;
+}
+
+.read-toggle-checkbox:checked + .read-toggle-label{
+    background: linear-gradient(-90deg, rgb(13, 236, 24), rgb(0, 213, 255));
+    border: 1px white solid;
+}
+
+.dark-mode-label img{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.dark-mode-label .moon{
+    width: 1rem;
+}
+
+.dark-mode-label .sun{
+    width: 1.1rem;
+}
+
+.dark-mode-label .ball, .read-toggle-label .ball{
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.1s linear;
+    cursor: pointer;
+}
+
+.toggle-dark-mode{
+    background: rgba(0, 0, 0, 0.877);
+    color: white;
+    border-color: white;
+}
+
+/* book modal */
+#book-modal, #edit-book-modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    width: 25%;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    z-index: 9999999999999999;
+}
+
+#book-modal.active, #edit-book-modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.toggle-modal{
+    background-color: rgb(26, 25, 25);
+    color: white;
+}
+
+.white-background{
+    background-color: white;
+}
+
+#book-modal #modal-close-btn, #edit-book-modal #edit-modal-close-btn{
+    position: absolute;
+    font-size: 2rem;
+    right: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#book-modal #modal-close-btn:hover, #edit-book-modal #edit-modal-close-btn:hover{
+    color: red;
+    transform: rotate(90deg) scale(1.3);
+}
+
+#book-modal .input-container, #edit-book-modal .input-container{
+    margin: 30px 50px;
+
+}
+
+.book-modal-title{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#book-modal input, #edit-book-modal input{
+    margin-top: 4px;
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px black solid;
+    padding: 10px;
+    outline: none;
+}
+
+#book-modal #cancel-add-btns, #edit-book-modal #cancel-edit-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cancel-add-btns button, #cancel-edit-btns button{
+    flex: 1;
+    height: 3rem;
+    border-radius: 0;
+    font-size: 1.3rem;
+}
+
+#cancel-add-btns #cancel-btn, #cancel-edit-btns #edit-cancel-btn{
+    background-color: rgb(230, 77, 77);
+    border-bottom-left-radius: 20px;
+}
+
+#cancel-add-btns #cancel-btn:hover, #cancel-edit-btns #edit-cancel-btn:hover{
+    background-color: rgb(241, 15, 15);
+}
+
+#cancel-add-btns #add-btn, #cancel-edit-btns #edit-btn{
+    background-color: rgb(41, 199, 41);
+    border-bottom-right-radius: 20px;
+}
+
+#cancel-add-btns #add-btn:hover, #cancel-edit-btns #edit-btn:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+#modal-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+    z-index: 999999999;
+}
+
+#modal-overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.warnings{
+    color: red;
+    font-size: 1.2rem;
+}
+
+/* book grid */
+#book-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 90%;
+    margin: auto;
+    margin-top: 1%;
+    /* border: 1px red solid; */
+}
+
+/* book information */
+.book-info{
+    background: linear-gradient(45deg, rgb(201, 201, 201), rgb(122, 122, 122));
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: auto;
+}
+
+.toggle-read-slider{
+    background: linear-gradient(60deg, rgb(90, 218, 96), rgb(17, 187, 221));
+}
+
+.book-info p, .book-info h2{
+    margin-top: 5px;
+}
+
+.book-info #update-btns{
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.book-info #update-btns button{
+    width: 45%;
+    height: 120%;
+} 
+
+.book-info #update-btns .edit-btn{
+    background-color: rgb(79, 201, 231);
+}
+
+.book-info #update-btns .edit-btn:hover{
+    background-color: rgb(16, 199, 245);
+}
+
+.book-info #update-btns .remove-btn{
+    background-color: rgb(247, 73, 73);
+}
+
+.book-info #update-btns .remove-btn:hover{
+    background-color: rgb(243, 49, 49);
+}
+
+/* general information */
+#grid-add-btn{
+    background: linear-gradient(60deg, rgb(90, 218, 96), rgb(17, 187, 221));
+    border: 1px black solid;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#grid-add-btn:hover{
+    transform: scale(1.05);
+}
+
+#grid-add-btn img{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    width: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+#grid-add-btn img:hover{
+    transform: rotate(90deg) scale(1.3);
+}
+
+#general-close-btn{
+    position: absolute;
+    font-size: 4rem;
+    top: 3px;
+    right: 16%;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#general-close-btn:hover{
+    color: red;
+    transform: rotate(90deg) scale(1.3);
+}
+
+#general-info-container{
+    width: 20%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 555556;
+    background-color: grey;
+    height: 100%;
+    opacity: 0.95;
+    transform: translateX(100%);
+    overflow-x: hidden;
+    transition: 0.3s ease-out;
+}
+
+.general-title{
+    margin-top: 20%;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.general-title::before, .general-title::after{
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0; 
+    right: 0;
+    width: 85%;
+    height: 5%;
+    background-color: black;    
+}
+
+.general-title::after{
+    bottom: 0;
+}
+
+.general-info p{
+    margin-top: 50px;
+}
+
+.general-info{
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+#info-keys{
+    margin-left: 5%;
+    flex: 1;
+}
+
+#info-values{
+    padding-right: 1%;
+    flex: 0.6;
+}
+
+.completion-rate-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#completion-rate-value-pages{
+    margin-top: 0;
+}
+
+#delete-btn{
+    margin-top: 35%;
+    transform: translateX(50%);
+    width: 50%;
+    height: 10%;
+    font-size: 1.2rem;
+}
+
+#delete-btn:hover{
+    background-color: rgb(211, 40, 40);
+    color: white;
+}
+
