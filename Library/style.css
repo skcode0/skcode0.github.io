@@ -21,7 +21,7 @@ button{
 nav{
     position: sticky;
     top: 0;
-    height: 10vh;
+    height: 10%;
     background: rgb(90, 90, 90);
     opacity: 0.85;
     display: flex;
@@ -89,7 +89,7 @@ nav p{
     display: flex;
     background-color: rgb(204, 204, 204);
     border-radius: 10px;
-    width: 50%;
+    width: 60%;
     margin: auto;
     margin-top: 5px;
     padding: 10px 0; 
@@ -144,7 +144,6 @@ nav p{
     justify-content: center;
     align-items: center;
     position: relative;
-    /* border: 1px red solid; */
 }
 
 .read-toggle-container{
@@ -236,6 +235,9 @@ nav p{
     border-radius: 20px;
     font-size: 1.3rem;
     z-index: 9999999999999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #book-modal.active, #edit-book-modal.active{
@@ -270,9 +272,9 @@ nav p{
     transform: rotate(90deg) scale(1.3);
 }
 
-#book-modal .input-container, #edit-book-modal .input-container{
-    margin: 30px 50px;
 
+#book-modal .input-container, #edit-book-modal .input-container{
+    margin: 15px 50px;
 }
 
 .book-modal-title{
@@ -280,7 +282,7 @@ nav p{
     font-weight: bold;
     text-decoration: underline;
     font-size: 1.5rem;
-    padding: 10px;
+    padding: 5px;
     margin-top: 10px;
 }
 
@@ -297,6 +299,7 @@ nav p{
 #book-modal #cancel-add-btns, #edit-book-modal #cancel-edit-btns{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 #cancel-add-btns button, #cancel-edit-btns button{
@@ -406,7 +409,6 @@ nav p{
     background-color: rgb(243, 49, 49);
 }
 
-/* general information */
 #grid-add-btn{
     background: linear-gradient(60deg, rgb(90, 218, 96), rgb(17, 187, 221));
     border: 1px black solid;
@@ -441,6 +443,7 @@ nav p{
     transform: rotate(90deg) scale(1.3);
 }
 
+/* general information */
 #general-close-btn{
     position: absolute;
     font-size: 4rem;
@@ -531,7 +534,7 @@ nav p{
     margin-top: 35%;
     transform: translateX(50%);
     width: 50%;
-    height: 10%;
+    height: 15%;
     font-size: 1.2rem;
 }
 
@@ -540,3 +543,309 @@ nav p{
     color: white;
 }
 
+/* media for phones */
+@media only screen and (max-width: 767px){
+    html{
+        font-size: 12px;
+    }
+
+    /* nav */
+    nav h1{
+        font-size: 3rem;
+    }
+
+    nav p{
+        text-align: center;
+    }
+
+    /* options */
+    .options-container{
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .options{
+        flex-direction: column;
+    }
+
+    .options-container select{
+        font-size: 1rem;
+        width: 100%;
+        margin: 2px;
+        outline: none;
+    }
+
+    .read-btns{
+        width: 100%;
+    }
+
+    /* dark mode */
+    .dark-mode-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dark-mode-container p{
+        margin-bottom: 3px;
+    }
+
+    /* book & edit modal */
+    #book-modal, #edit-book-modal{
+        width: 80%;
+    }
+
+    #book-modal .input-container, #edit-book-modal .input-container{
+        margin: 4px 20px;
+        font-size: 1.1rem;
+    }
+
+    #book-modal .input-container p, #edit-book-modal .input-container p{
+        font-size: 0.9rem;
+    }
+
+    #book-modal #cancel-add-btns, #edit-book-modal #cancel-edit-btns{
+        margin-top: 5px;
+    }
+
+    /* general info */
+    #burger-menu{
+        width: 7%;
+        top: 2vh;
+    }
+
+    #general-info-container{
+        width: 100%;
+    }
+    
+    .general-title{
+        margin-top: 20%;
+        text-align: center;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .general-info p{
+        margin-top: 5vh;
+        font-size: 1.3rem;
+    }
+
+    #delete-btn{
+        transform: none;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 20%;
+        width: 20vh;
+        height: 13vh;
+    }
+
+    #general-close-btn{
+        font-size: 15vw;
+        top: -10px;
+        right: 2%;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    #book-modal, #edit-book-modal{
+        width: 90%;
+    }
+
+    .general-info p{
+        margin-top: 4vh;
+        font-size: 1.3rem;
+    }
+
+    #burger-menu{
+        top: 3%;
+    }
+}
+
+@media only screen and (max-width: 280px){
+    #general-close-btn{
+        font-size: 15vw;
+        top: 0.5vh;
+        right: 2%;
+    }
+
+    #burger-menu{
+        width: 7%;
+        top: 2vh;
+    }
+
+    #book-grid{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-rows: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* media for tablets & laptops & pcs */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    /* options */
+    .options-container{
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .options{
+        width: 800px;
+    }
+
+    .options p{
+        width: 300px;
+    }
+
+    .options-container select{
+        font-size: 0.9rem;
+        width: 70%;
+        margin: 2px;
+        outline: none;
+    }
+
+    .read-btns{
+        width: 100%;
+    }
+
+    /* dark mode */
+    .dark-mode-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dark-mode-container p{
+        margin-bottom: 3px;
+    }
+
+    /* book & edit modal */
+    #book-modal, #edit-book-modal{
+        width: 60%;
+    }
+
+    #book-modal .input-container, #edit-book-modal .input-container{
+        margin: 4px 20px;
+        font-size: 1.1rem;
+    }
+
+    #book-modal .input-container p, #edit-book-modal .input-container p{
+        font-size: 1.2rem;
+    }
+
+    #book-modal #cancel-add-btns, #edit-book-modal #cancel-edit-btns{
+        margin-top: 5px;
+    }
+
+    /* general info */
+    #burger-menu{
+        width: 5%;
+        top: 1.5vh;
+    }
+
+    #general-info-container{
+        width: 50%;
+    }
+    
+    .general-title{
+        margin-top: 20%;
+        text-align: center;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .general-info p{
+        margin-top: 5vw;
+        font-size: 1.3rem;
+    }
+
+    #delete-btn{
+        transform: none;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 20%;
+        width: 20vh;
+        height: 13vh;
+    }
+
+    #general-close-btn{
+        font-size: 10vw;
+        top: -2%;
+        right: 5%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1919px){
+    /* options */
+    .options-container{
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .options p{
+        width: 300px;
+    }
+
+    .options-container select{
+        font-size: 1rem;
+        width: 70%;
+        margin: 2px;
+        outline: none;
+    }
+
+    .read-btns{
+        width: 100%;
+    }
+
+    /* dark mode */
+    .dark-mode-container p{
+        margin-bottom: 3px;
+        width: 100px;
+    }
+
+    /* book & edit modal */
+    #book-modal, #edit-book-modal{
+        width: 30%;
+    }
+
+    #book-modal .input-container, #edit-book-modal .input-container{
+        margin: 10px 30px;
+        font-size: 1.1rem;
+    }
+
+    #book-modal .input-container p, #edit-book-modal .input-container p{
+        font-size: 1rem;
+    }
+
+    /* general info */
+    #burger-menu{
+        width: 4%;
+        top: 1.5vw;
+    }
+
+    #general-info-container{
+        width: 35%;
+    }
+    
+    .general-info p{
+        margin-top: 5vh;
+        font-size: 1.2rem;
+    }
+
+    #general-close-btn{
+        font-size: 10vw;
+        top: -2.5%;
+        right: 5%;
+    }
+}
+
+@media only screen and (min-width: 1050px) and (max-width: 1919px){
+    #burger-menu{
+        width: 3%;
+        top: 1.5vw;
+    }
+
+    #general-close-btn{
+        font-size: 7vw;
+        top: -2.5%;
+        right: 7%;
+    }
+}

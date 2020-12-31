@@ -46,7 +46,7 @@
             </div>
         </div>
 
-            <!-- night mode -->
+            <!-- dark mode -->
         <div class="dark-mode-container">
             <p>Dark Mode: </p>
             <div>
@@ -67,31 +67,31 @@
         
         <div class="input-container" id="book-title-container">
             <label for="book-title">Book Title*:</label>
-            <br>
+
             <input id="book-title" type="text">
             <p class="warnings" id="book-title-warning"></p>
         </div>
         <div class="input-container">
             <label for="book-author">Book Author*:</label>
-            <br>
+
             <input id="book-author"  type="text">
             <p class="warnings" id="book-author-warning"></p>
         </div>
         <div class="input-container">
             <label for="published-date">Publication Date*: </label>
-            <br>
+
             <input id="published-date"  type="date" name="published-date">
             <p class="warnings" id="published-date-warning"></p>
         </div>
         <div class="input-container">
             <label for="total-pages">Total Pages*:</label>
-            <br>
+
             <input id="total-pages" type="number" min=1 max=9999999999>
             <p class="warnings" id="total-pages-warning"></p>
         </div>
         <div class="input-container">
             <label for="pages-read">Pages Read*:</label>
-            <br>
+
             <input id="pages-read" type="number" min=0>
             <p class="warnings" id="pages-read-warning"></p>
         </div>
@@ -102,7 +102,7 @@
                 <option value="read">Read</option>
             </select>
         </div>
-        <br>
+
         <div id="cancel-add-btns">
             <button id="cancel-btn">Cancel</button>
             <button id="add-btn">Add</button>
@@ -116,33 +116,28 @@
         
         <div class="input-container">
             <label for="edit-book-title">Book Title*:</label>
-            <br>
             <input id="edit-book-title" type="text">
             <p class="warnings" id="edit-book-title-warning"></p>
         </div>
         <div class="input-container">
             <label for="edit-book-author">Book Author*:</label>
-            <br>
             <input id="edit-book-author"  type="text">
             <p class="warnings" id="edit-book-author-warning"></p>
 
         </div>
         <div class="input-container">
             <label for="edit-published-date">Publication Date*: </label>
-            <br>
             <input id="edit-published-date"  type="date" name="published-date">
             <p class="warnings" id="edit-published-date-warning"></p>
         </div>
         <div class="input-container">
             <label for="edit-total-pages">Total Pages*:</label>
-            <br>
             <input id="edit-total-pages" type="number" min=1 max=9999999999>
             <p class="warnings" id="edit-total-pages-warning"></p>
         </div>
 
         <div class="input-container">
             <label for="edit-pages-read">Pages Read*:</label>
-            <br>
             <input id="edit-pages-read" type="number" min=0>
             <p class="warnings" id="edit-pages-read-warning"></p>
         </div>
@@ -153,7 +148,6 @@
                 <option value="read">Read</option>
             </select>
         </div>
-        <br>
         <div id="cancel-edit-btns">
             <button id="edit-cancel-btn">Cancel</button>
             <button id="edit-btn">Edit</button>
@@ -163,11 +157,11 @@
     <div id="modal-overlay"></div>
 
     <!-- book grid -->
-        <div id="book-grid">
-            <!-- individual book info from JS-->
-            <div id="grid-add-btn">
-                <img src="img/add.svg" alt="">
-            </div>
+    <div id="book-grid">
+        <!-- individual book info from JS-->
+        <div id="grid-add-btn">
+            <img src="img/add.svg" alt="">
+        </div>
     </div>
     
     <!-- general info -->
