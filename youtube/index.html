@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chrome 88 adds aspect-ratio and 2 awesome new devtool features!</title>
+        <link rel="shortcut icon" href="images/youtube.svg" type="image/svg">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- nav -->
+        <header>
+            <nav>
+                <div class="logo-menu-container">
+                    <img class="burger-menu" src="images/menu.svg" alt="Burger Menu">
+                    <div class="yt-logo">
+                        <a href="index.html">
+                            <img src="images/youtube.svg" alt="Youtube Logo">
+                            <p>YouTube</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <input class="search-input" type="text" placeholder="Search">
+                        <button class="search-button"><img src="images/magnify.svg" alt="Search Button"></button>
+                        <img class="mic" src="images/microphone.svg" alt="microphone">
+                    </div>
+                </div>
+
+                <div class="options-container">
+                    <div class="img-container">
+                        <img src="images/video-plus.svg" alt="Create">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/apps.svg" alt="Apps">
+                    </div>
+                    <div class="img-container">
+                        <img class="bell" src="images/bell.svg" alt="Bell Notification">
+                    </div>
+                    <img class="account" src="images/account-circle.svg" alt="Account Image">
+                </div>
+            </nav>    
+        </header>
+
+        <div class="content-grid">
+            <!-- main video and description -->
+            <main class="video">
+                <div class="iframe-wrapper">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/FF3fuYLnApQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <section class="title-container">
+                    <a href="https://www.youtube.com/hashtag/css">#css</a>
+                    <h1>Chrome 88 adds aspect-ratio and 2 awesome new devtool features!
+                    </h1>
+                    <div class="viewer-stats">
+                        <p>11,070 views • Jan 22, 2021</p>
+                        <div class="viewer-options">
+                            <div class="likes-container">
+                                <div class="thumbs">
+                                    <img src="images/thumb-up.svg" alt="Thumbs Up">
+                                    <span>1.1K</span>
+                                </div>
+                                <div class="thumbs">
+                                    <img src="images/thumb-down.svg" alt="Thumbs Down">
+                                    <span>7</span>
+                                </div>
+                            </div>
+
+                            <div class="share">
+                                <img src="images/share.svg" alt="Share">
+                                <span>SHARE</span>
+                            </div>
+
+                            <div class="save">
+                                <img src="images/playlist-plus.svg" alt="Save">
+                                <span>SAVE</span>
+                            </div>
+
+                            <img src="images/dots-horizontal.svg" alt="Horizontal Dots">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="desc-container">
+                    <div class="uploader-container">
+                        <div class="uploader-channel">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwngmy_4_dTEMieSCIh8CL8SYgTg7uqIIb_ajY8O_zg=s48-c-k-c0xffffffff-no-rj-mo" alt="Kevin Powwell">
+                            <div class="uploader-info">
+                                <h1>Kevin Powell <img src="images/check-circle.svg" alt="Verified"></h1>
+                                <p>189K Subscribers</p>
+                            </div>
+                        </div>
+
+                        <button class="subscribe">SUBSCRIBE</button>
+                    </div>
+
+                    <div class="description">
+                        <p>Chrome 88 has shipped, and with it we now have aspect-ratio! Obviously we have to be careful because support for it is just starting up, but this is really exciting!
+                        </p>
+                        <br>
+                        <br>
+                        <p class="show-more">SHOW MORE</p>
+                        <br>
+                    </div>
+                </section>
+            </main>
+
+            <!-- recommended videos -->
+            <aside id="vid-aside">
+                <a href="https://www.youtube.com/watch?v=vQWlgd7hV4A" class="recommended-video">
+                    <div class="thumbnail-img">
+                        <img src="https://i.ytimg.com/vi/vQWlgd7hV4A/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCknuL6VV5JJRA6D1LfOK6YG1EaeQ" alt="HTML/CSS Crash Course">
+                        <div class="hover-options">
+                            <img src="images/clock.svg" alt="Clock">
+                            <br>
+                            <img src="images/playlist-play.svg" alt="Playlist Play">
+                        </div>
+                        <p class="time-stamp">3:54:03</p>
+                    </div>
+                    <div class="thumbnail-info">
+                        <h3>Learn HTML5 and CSS3 For Beginners - Crash Course</h3>
+                        <p class="uploader-name">Dev Ed <img src="images/check-circle.svg" alt="Verified"></p>
+                        <p>480K views • 1 year ago</p>
+                    </div>
+
+                    <img class="vertical-dots" src="images/dots-vertical-thumb.svg" alt="Vertical Dots">
+                </a>
+                <div class="hashtags">
+                    <div class="hashtag selected">All</div>
+                    <div class="hashtag not-selected">CSS</div>
+                    <div class="hashtag not-selected">Related</div>
+                    <div class="hashtag not-selected">From Kevin Powell</div>
+                    <div class="hashtag not-selected">Recently</div>
+                    <img src="images/chevron-right.svg" alt="Right Arrow">
+                </div>
+
+                <!-- js rendered -->
+
+            </aside>  
+
+            <!-- comment section -->
+            <section class="comments">
+                <div class="total-comments">
+                    <h2>116 Comments</h2>
+                    <div class="sort-comments">
+                        <img src="images/sort-variant.svg" alt="Sort Comments">
+                        <span class="sort-by">SORT BY</span>
+                    </div>
+                </div>
+
+                <div class="my-comment">
+                    <img src="images/account-circle.svg" alt="My Profile" class="my-profile">
+                    <input type="text" placeholder="Add a public comment...">
+                </div>
+
+                <div id="comments-container">
+                    <!-- js rendered -->
+                </div>
+            </section>
+        </div>
+
+        <script src="script.js" async defer></script>
+    </body>
+</html>
